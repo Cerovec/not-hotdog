@@ -13,6 +13,8 @@
 		18CCE2292072BE4700EACB50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18CCE2282072BE4700EACB50 /* Assets.xcassets */; };
 		18CCE22C2072BE4700EACB50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18CCE22A2072BE4700EACB50 /* LaunchScreen.storyboard */; };
 		18CCE22F2072BE4700EACB50 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CCE22E2072BE4700EACB50 /* main.m */; };
+		18CCE2382072C02500EACB50 /* MBCameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CCE2372072C02500EACB50 /* MBCameraView.m */; };
+		18CCE23B2072C1F600EACB50 /* MBCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CCE23A2072C1F500EACB50 /* MBCameraViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		18CCE22B2072BE4700EACB50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18CCE22D2072BE4700EACB50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18CCE22E2072BE4700EACB50 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		18CCE2362072C02500EACB50 /* MBCameraView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBCameraView.h; sourceTree = "<group>"; };
+		18CCE2372072C02500EACB50 /* MBCameraView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBCameraView.m; sourceTree = "<group>"; };
+		18CCE2392072C1F500EACB50 /* MBCameraViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBCameraViewController.h; sourceTree = "<group>"; };
+		18CCE23A2072C1F500EACB50 /* MBCameraViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBCameraViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +81,10 @@
 		18CCE2352072BF6800EACB50 /* Camera */ = {
 			isa = PBXGroup;
 			children = (
+				18CCE2392072C1F500EACB50 /* MBCameraViewController.h */,
+				18CCE23A2072C1F500EACB50 /* MBCameraViewController.m */,
+				18CCE2362072C02500EACB50 /* MBCameraView.h */,
+				18CCE2372072C02500EACB50 /* MBCameraView.m */,
 			);
 			path = Camera;
 			sourceTree = "<group>";
@@ -151,6 +161,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18CCE23B2072C1F600EACB50 /* MBCameraViewController.m in Sources */,
+				18CCE2382072C02500EACB50 /* MBCameraView.m in Sources */,
 				18CCE2242072BE4700EACB50 /* MBRootViewController.m in Sources */,
 				18CCE22F2072BE4700EACB50 /* main.m in Sources */,
 				18CCE2212072BE4700EACB50 /* MBAppDelegate.m in Sources */,
@@ -290,6 +302,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CQTJWP89J7;
 				INFOPLIST_FILE = "not-hotdog/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.microblink.not-hotdog";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -304,6 +317,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CQTJWP89J7;
 				INFOPLIST_FILE = "not-hotdog/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.microblink.not-hotdog";
 				PRODUCT_NAME = "$(TARGET_NAME)";

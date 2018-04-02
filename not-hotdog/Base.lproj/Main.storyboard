@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,14 +15,71 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MBRootViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ScE-kP-3k8">
+                                <rect key="frame" x="159" y="321" width="56" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="didTapStart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZVD-zk-TTB"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ScE-kP-3k8" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="dg2-EE-cyx"/>
+                            <constraint firstItem="ScE-kP-3k8" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="vcE-Ia-Att"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="153" y="116"/>
+        </scene>
+        <!--Camera View Controller-->
+        <scene sceneID="zHO-gI-uBF">
+            <objects>
+                <viewController storyboardIdentifier="MBCameraViewController" id="D0b-36-ggV" customClass="MBCameraViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Rk0-rG-WM8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aQi-20-B6U" customClass="MBCameraView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efj-uc-fJA">
+                                <rect key="frame" x="20" y="40" width="55" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Close">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapClose:" destination="D0b-36-ggV" eventType="touchUpInside" id="jqU-yb-UBa"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="aQi-20-B6U" firstAttribute="width" secondItem="Rk0-rG-WM8" secondAttribute="width" id="2AW-rM-G0R"/>
+                            <constraint firstItem="aQi-20-B6U" firstAttribute="centerX" secondItem="Rk0-rG-WM8" secondAttribute="centerX" id="6xh-La-Yrt"/>
+                            <constraint firstItem="aQi-20-B6U" firstAttribute="centerY" secondItem="Rk0-rG-WM8" secondAttribute="centerY" id="B3L-VU-Eab"/>
+                            <constraint firstItem="bGa-IH-VAB" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="efj-uc-fJA" secondAttribute="trailing" constant="20" id="CZu-sY-RMQ"/>
+                            <constraint firstItem="aQi-20-B6U" firstAttribute="height" secondItem="Rk0-rG-WM8" secondAttribute="height" id="ob5-XI-NEZ"/>
+                            <constraint firstItem="efj-uc-fJA" firstAttribute="top" secondItem="bGa-IH-VAB" secondAttribute="top" constant="20" id="tGv-fT-Pb5"/>
+                            <constraint firstItem="efj-uc-fJA" firstAttribute="leading" secondItem="bGa-IH-VAB" secondAttribute="leading" constant="20" id="vfd-6J-HMC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bGa-IH-VAB"/>
+                    </view>
+                    <connections>
+                        <outlet property="cameraView" destination="aQi-20-B6U" id="hEc-03-3DY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B8Z-9f-t63" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="871" y="116"/>
         </scene>
     </scenes>
 </document>

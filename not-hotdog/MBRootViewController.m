@@ -8,7 +8,9 @@
 
 #import "MBRootViewController.h"
 
-@interface MBRootViewController ()
+#import "MBCameraViewController.h"
+
+@interface MBRootViewController () <MBCameraViewControllerDelegate>
 
 @end
 
@@ -25,5 +27,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)didTapStart:(id)sender {
+    MBCameraViewController *cameraViewController = [MBCameraViewController viewControllerFromStoryboard];
+    cameraViewController.delegate = self;
+    [self presentViewController:cameraViewController animated:YES completion:nil];
+}
+
+#pragma mark - MBCameraViewControllerDelegate
+
+- (void)cameraViewControllerWillClose:(MBCameraViewController *)viewController {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 @end

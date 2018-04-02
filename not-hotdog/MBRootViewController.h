@@ -10,6 +10,7 @@
 
 @interface MBRootViewController : UIViewController
 
+- (IBAction)didTapStart:(id)sender;
 
 @end
 
