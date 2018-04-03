@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -60,13 +59,26 @@
                                     <action selector="didTapClose:" destination="D0b-36-ggV" eventType="touchUpInside" id="jqU-yb-UBa"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hotdog!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="xHY-Jw-pOZ">
+                                <rect key="frame" x="39" y="567" width="296" height="60"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="FtY-mv-c2c"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <color key="textColor" red="0.28235294119999998" green="0.69803921570000005" blue="0.90980392160000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="aQi-20-B6U" firstAttribute="width" secondItem="Rk0-rG-WM8" secondAttribute="width" id="2AW-rM-G0R"/>
+                            <constraint firstItem="bGa-IH-VAB" firstAttribute="trailing" secondItem="xHY-Jw-pOZ" secondAttribute="trailing" constant="40" id="2Xf-gr-FoJ"/>
                             <constraint firstItem="aQi-20-B6U" firstAttribute="centerX" secondItem="Rk0-rG-WM8" secondAttribute="centerX" id="6xh-La-Yrt"/>
                             <constraint firstItem="aQi-20-B6U" firstAttribute="centerY" secondItem="Rk0-rG-WM8" secondAttribute="centerY" id="B3L-VU-Eab"/>
                             <constraint firstItem="bGa-IH-VAB" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="efj-uc-fJA" secondAttribute="trailing" constant="20" id="CZu-sY-RMQ"/>
+                            <constraint firstItem="bGa-IH-VAB" firstAttribute="bottom" secondItem="xHY-Jw-pOZ" secondAttribute="bottom" constant="40" id="VUf-Od-noa"/>
+                            <constraint firstItem="xHY-Jw-pOZ" firstAttribute="centerX" secondItem="bGa-IH-VAB" secondAttribute="centerX" id="bs4-wy-YUR"/>
                             <constraint firstItem="aQi-20-B6U" firstAttribute="height" secondItem="Rk0-rG-WM8" secondAttribute="height" id="ob5-XI-NEZ"/>
                             <constraint firstItem="efj-uc-fJA" firstAttribute="top" secondItem="bGa-IH-VAB" secondAttribute="top" constant="20" id="tGv-fT-Pb5"/>
                             <constraint firstItem="efj-uc-fJA" firstAttribute="leading" secondItem="bGa-IH-VAB" secondAttribute="leading" constant="20" id="vfd-6J-HMC"/>
@@ -75,6 +87,7 @@
                     </view>
                     <connections>
                         <outlet property="cameraView" destination="aQi-20-B6U" id="hEc-03-3DY"/>
+                        <outlet property="classLabel" destination="xHY-Jw-pOZ" id="q1d-yX-Uhg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B8Z-9f-t63" userLabel="First Responder" sceneMemberID="firstResponder"/>

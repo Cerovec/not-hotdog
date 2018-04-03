@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18A420E62072F4540006CC8E /* Inceptionv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 18A420E52072F4530006CC8E /* Inceptionv3.mlmodel */; };
+		18A420E92072FE900006CC8E /* MBClassifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A420E82072FE900006CC8E /* MBClassifier.m */; };
+		18A420F220730BE00006CC8E /* UIImage+MBResize.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A420F120730BE00006CC8E /* UIImage+MBResize.m */; };
+		18A420F520730E9A0006CC8E /* MBImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A420F420730E9A0006CC8E /* MBImage.m */; };
 		18CCE2212072BE4700EACB50 /* MBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CCE2202072BE4700EACB50 /* MBAppDelegate.m */; };
 		18CCE2242072BE4700EACB50 /* MBRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CCE2232072BE4700EACB50 /* MBRootViewController.m */; };
 		18CCE2272072BE4700EACB50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18CCE2252072BE4700EACB50 /* Main.storyboard */; };
@@ -18,6 +22,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18A420E52072F4530006CC8E /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Inceptionv3.mlmodel; sourceTree = "<group>"; };
+		18A420E72072FE900006CC8E /* MBClassifier.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBClassifier.h; sourceTree = "<group>"; };
+		18A420E82072FE900006CC8E /* MBClassifier.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBClassifier.m; sourceTree = "<group>"; };
+		18A420F020730BE00006CC8E /* UIImage+MBResize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+MBResize.h"; sourceTree = "<group>"; };
+		18A420F120730BE00006CC8E /* UIImage+MBResize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MBResize.m"; sourceTree = "<group>"; };
+		18A420F320730E9A0006CC8E /* MBImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBImage.h; sourceTree = "<group>"; };
+		18A420F420730E9A0006CC8E /* MBImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBImage.m; sourceTree = "<group>"; };
 		18CCE21C2072BE4700EACB50 /* not-hotdog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "not-hotdog.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		18CCE21F2072BE4700EACB50 /* MBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBAppDelegate.h; sourceTree = "<group>"; };
 		18CCE2202072BE4700EACB50 /* MBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBAppDelegate.m; sourceTree = "<group>"; };
@@ -45,6 +56,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18A420E42072F4530006CC8E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				18A420E52072F4530006CC8E /* Inceptionv3.mlmodel */,
+				18A420E72072FE900006CC8E /* MBClassifier.h */,
+				18A420E82072FE900006CC8E /* MBClassifier.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		18A420EA207304B60006CC8E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				18A420F020730BE00006CC8E /* UIImage+MBResize.h */,
+				18A420F120730BE00006CC8E /* UIImage+MBResize.m */,
+				18A420F320730E9A0006CC8E /* MBImage.h */,
+				18A420F420730E9A0006CC8E /* MBImage.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		18CCE2132072BE4700EACB50 = {
 			isa = PBXGroup;
 			children = (
@@ -64,6 +96,8 @@
 		18CCE21E2072BE4700EACB50 /* not-hotdog */ = {
 			isa = PBXGroup;
 			children = (
+				18A420EA207304B60006CC8E /* Utils */,
+				18A420E42072F4530006CC8E /* Models */,
 				18CCE2352072BF6800EACB50 /* Camera */,
 				18CCE21F2072BE4700EACB50 /* MBAppDelegate.h */,
 				18CCE2202072BE4700EACB50 /* MBAppDelegate.m */,
@@ -162,9 +196,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				18CCE23B2072C1F600EACB50 /* MBCameraViewController.m in Sources */,
+				18A420E62072F4540006CC8E /* Inceptionv3.mlmodel in Sources */,
+				18A420F220730BE00006CC8E /* UIImage+MBResize.m in Sources */,
 				18CCE2382072C02500EACB50 /* MBCameraView.m in Sources */,
+				18A420E92072FE900006CC8E /* MBClassifier.m in Sources */,
 				18CCE2242072BE4700EACB50 /* MBRootViewController.m in Sources */,
 				18CCE22F2072BE4700EACB50 /* main.m in Sources */,
+				18A420F520730E9A0006CC8E /* MBImage.m in Sources */,
 				18CCE2212072BE4700EACB50 /* MBAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

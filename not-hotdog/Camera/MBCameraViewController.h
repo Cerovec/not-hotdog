@@ -15,6 +15,8 @@
 
 @property (nonatomic, weak) id<MBCameraViewControllerDelegate> delegate;
 
+@property (weak, nonatomic) IBOutlet UILabel *classLabel;
+
 - (IBAction)didTapClose:(id)sender;
 
 + (MBCameraViewController *)viewControllerFromStoryboard;
