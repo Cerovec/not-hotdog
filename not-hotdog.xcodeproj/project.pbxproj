@@ -7,21 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18421196207381AA0038B00A /* MBRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1842118F207381AA0038B00A /* MBRootViewController.m */; };
+		18421197207381AA0038B00A /* MBCameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18421193207381AA0038B00A /* MBCameraView.m */; };
+		18421198207381AA0038B00A /* MBCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18421194207381AA0038B00A /* MBCameraViewController.m */; };
 		18A420E62072F4540006CC8E /* Inceptionv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 18A420E52072F4530006CC8E /* Inceptionv3.mlmodel */; };
 		18A420E92072FE900006CC8E /* MBClassifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A420E82072FE900006CC8E /* MBClassifier.m */; };
 		18A420F220730BE00006CC8E /* UIImage+MBResize.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A420F120730BE00006CC8E /* UIImage+MBResize.m */; };
 		18A420F520730E9A0006CC8E /* MBImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A420F420730E9A0006CC8E /* MBImage.m */; };
 		18CCE2212072BE4700EACB50 /* MBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CCE2202072BE4700EACB50 /* MBAppDelegate.m */; };
-		18CCE2242072BE4700EACB50 /* MBRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CCE2232072BE4700EACB50 /* MBRootViewController.m */; };
 		18CCE2272072BE4700EACB50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18CCE2252072BE4700EACB50 /* Main.storyboard */; };
 		18CCE2292072BE4700EACB50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18CCE2282072BE4700EACB50 /* Assets.xcassets */; };
 		18CCE22C2072BE4700EACB50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18CCE22A2072BE4700EACB50 /* LaunchScreen.storyboard */; };
 		18CCE22F2072BE4700EACB50 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CCE22E2072BE4700EACB50 /* main.m */; };
-		18CCE2382072C02500EACB50 /* MBCameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CCE2372072C02500EACB50 /* MBCameraView.m */; };
-		18CCE23B2072C1F600EACB50 /* MBCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CCE23A2072C1F500EACB50 /* MBCameraViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1842118F207381AA0038B00A /* MBRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBRootViewController.m; sourceTree = "<group>"; };
+		18421191207381AA0038B00A /* MBCameraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBCameraView.h; sourceTree = "<group>"; };
+		18421192207381AA0038B00A /* MBCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBCameraViewController.h; sourceTree = "<group>"; };
+		18421193207381AA0038B00A /* MBCameraView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBCameraView.m; sourceTree = "<group>"; };
+		18421194207381AA0038B00A /* MBCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBCameraViewController.m; sourceTree = "<group>"; };
+		18421195207381AA0038B00A /* MBRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBRootViewController.h; sourceTree = "<group>"; };
 		18A420E52072F4530006CC8E /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Inceptionv3.mlmodel; sourceTree = "<group>"; };
 		18A420E72072FE900006CC8E /* MBClassifier.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBClassifier.h; sourceTree = "<group>"; };
 		18A420E82072FE900006CC8E /* MBClassifier.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBClassifier.m; sourceTree = "<group>"; };
@@ -32,17 +38,11 @@
 		18CCE21C2072BE4700EACB50 /* not-hotdog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "not-hotdog.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		18CCE21F2072BE4700EACB50 /* MBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBAppDelegate.h; sourceTree = "<group>"; };
 		18CCE2202072BE4700EACB50 /* MBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBAppDelegate.m; sourceTree = "<group>"; };
-		18CCE2222072BE4700EACB50 /* MBRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBRootViewController.h; sourceTree = "<group>"; };
-		18CCE2232072BE4700EACB50 /* MBRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBRootViewController.m; sourceTree = "<group>"; };
 		18CCE2262072BE4700EACB50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		18CCE2282072BE4700EACB50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18CCE22B2072BE4700EACB50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18CCE22D2072BE4700EACB50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18CCE22E2072BE4700EACB50 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		18CCE2362072C02500EACB50 /* MBCameraView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBCameraView.h; sourceTree = "<group>"; };
-		18CCE2372072C02500EACB50 /* MBCameraView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBCameraView.m; sourceTree = "<group>"; };
-		18CCE2392072C1F500EACB50 /* MBCameraViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBCameraViewController.h; sourceTree = "<group>"; };
-		18CCE23A2072C1F500EACB50 /* MBCameraViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBCameraViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,12 +56,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1842118E207381AA0038B00A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1842118F207381AA0038B00A /* MBRootViewController.m */,
+				18421195207381AA0038B00A /* MBRootViewController.h */,
+				18421190207381AA0038B00A /* Camera */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		18421190207381AA0038B00A /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				18421191207381AA0038B00A /* MBCameraView.h */,
+				18421193207381AA0038B00A /* MBCameraView.m */,
+				18421192207381AA0038B00A /* MBCameraViewController.h */,
+				18421194207381AA0038B00A /* MBCameraViewController.m */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
 		18A420E42072F4530006CC8E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				18A420E52072F4530006CC8E /* Inceptionv3.mlmodel */,
 				18A420E72072FE900006CC8E /* MBClassifier.h */,
 				18A420E82072FE900006CC8E /* MBClassifier.m */,
+				18A420E52072F4530006CC8E /* Inceptionv3.mlmodel */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -96,13 +117,11 @@
 		18CCE21E2072BE4700EACB50 /* not-hotdog */ = {
 			isa = PBXGroup;
 			children = (
-				18A420EA207304B60006CC8E /* Utils */,
+				1842118E207381AA0038B00A /* ViewControllers */,
 				18A420E42072F4530006CC8E /* Models */,
-				18CCE2352072BF6800EACB50 /* Camera */,
+				18A420EA207304B60006CC8E /* Utils */,
 				18CCE21F2072BE4700EACB50 /* MBAppDelegate.h */,
 				18CCE2202072BE4700EACB50 /* MBAppDelegate.m */,
-				18CCE2222072BE4700EACB50 /* MBRootViewController.h */,
-				18CCE2232072BE4700EACB50 /* MBRootViewController.m */,
 				18CCE2252072BE4700EACB50 /* Main.storyboard */,
 				18CCE2282072BE4700EACB50 /* Assets.xcassets */,
 				18CCE22A2072BE4700EACB50 /* LaunchScreen.storyboard */,
@@ -110,17 +129,6 @@
 				18CCE22E2072BE4700EACB50 /* main.m */,
 			);
 			path = "not-hotdog";
-			sourceTree = "<group>";
-		};
-		18CCE2352072BF6800EACB50 /* Camera */ = {
-			isa = PBXGroup;
-			children = (
-				18CCE2392072C1F500EACB50 /* MBCameraViewController.h */,
-				18CCE23A2072C1F500EACB50 /* MBCameraViewController.m */,
-				18CCE2362072C02500EACB50 /* MBCameraView.h */,
-				18CCE2372072C02500EACB50 /* MBCameraView.m */,
-			);
-			path = Camera;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,13 +203,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18CCE23B2072C1F600EACB50 /* MBCameraViewController.m in Sources */,
+				18421196207381AA0038B00A /* MBRootViewController.m in Sources */,
 				18A420E62072F4540006CC8E /* Inceptionv3.mlmodel in Sources */,
 				18A420F220730BE00006CC8E /* UIImage+MBResize.m in Sources */,
-				18CCE2382072C02500EACB50 /* MBCameraView.m in Sources */,
 				18A420E92072FE900006CC8E /* MBClassifier.m in Sources */,
-				18CCE2242072BE4700EACB50 /* MBRootViewController.m in Sources */,
+				18421197207381AA0038B00A /* MBCameraView.m in Sources */,
 				18CCE22F2072BE4700EACB50 /* main.m in Sources */,
+				18421198207381AA0038B00A /* MBCameraViewController.m in Sources */,
 				18A420F520730E9A0006CC8E /* MBImage.m in Sources */,
 				18CCE2212072BE4700EACB50 /* MBAppDelegate.m in Sources */,
 			);

@@ -14,6 +14,8 @@
 
 @interface MBCameraViewController () <AVCaptureVideoDataOutputSampleBufferDelegate>
 
+@property (weak, nonatomic) IBOutlet UILabel *classLabel;
+
 @property (weak, nonatomic) IBOutlet MBCameraView *cameraView;
 
 @property (nonatomic, strong) AVCaptureSession *captureSession;
@@ -24,19 +26,23 @@
 
 @property (nonatomic) MBClassifier *classifier;
 
+- (IBAction)didTapClose:(id)sender;
+
 @end
 
 @implementation MBCameraViewController
 
-#pragma mark - View Controller livecycle
+#pragma mark - View Controller lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.sessionQueue = dispatch_queue_create( "session queue", DISPATCH_QUEUE_SERIAL);
-    self.processingQueue = dispatch_queue_create( "processing queue", DISPATCH_QUEUE_SERIAL);
+    self.sessionQueue = dispatch_queue_create("session queue", DISPATCH_QUEUE_SERIAL);
+    self.processingQueue = dispatch_queue_create("processing queue", DISPATCH_QUEUE_SERIAL);
 
     self.classifier = [[MBClassifier alloc] init];
+
+    self.classLabel.hidden = YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -70,24 +76,7 @@
     if (UIDeviceOrientationIsPortrait(deviceOrientation) || UIDeviceOrientationIsLandscape(deviceOrientation)) {
         AVCaptureVideoPreviewLayer *previewLayer = (AVCaptureVideoPreviewLayer *)self.cameraView.layer;
         previewLayer.connection.videoOrientation = (AVCaptureVideoOrientation)deviceOrientation;
-
-        switch (deviceOrientation) {
-            case UIDeviceOrientationPortrait:
-                self.classifier.orientation = UIImageOrientationRight;
-                break;
-            case UIDeviceOrientationPortraitUpsideDown:
-                self.classifier.orientation = UIImageOrientationLeft;
-                break;
-            case UIDeviceOrientationLandscapeLeft:
-                self.classifier.orientation = UIImageOrientationUp;
-                break;
-            case UIDeviceOrientationLandscapeRight:
-                self.classifier.orientation = UIImageOrientationDown;
-                break;
-            default:
-                self.classifier.orientation = UIImageOrientationUp;
-                break;
-        }
+        [self.classifier updateWithDeviceOrientation:deviceOrientation];
     }
 }
 
@@ -131,14 +120,6 @@
     return UIStatusBarStyleLightContent;
 }
 
-#pragma mark - Class label appearance
-
-- (void)setClassLabelHotDog:(BOOL)isHotDog {
-    self.classLabel.backgroundColor = (!isHotDog) ? [UIColor whiteColor] : [UIColor colorWithRed:(CGFloat)0.22823 green:0.698 blue:0.909 alpha:1.0];
-    self.classLabel.textColor = (!isHotDog) ? [UIColor colorWithRed:(CGFloat)0.22823 green:0.698 blue:0.909 alpha:1.0] : [UIColor whiteColor];
-    if (isHotDog) self.classLabel.text = @"Hotdog!";
-}
-
 #pragma mark - Capture session control
 
 - (void)startCaptureSession {
@@ -161,10 +142,12 @@
         videoDataOutput.alwaysDiscardsLateVideoFrames = YES;
         [self.captureSession addOutput:videoDataOutput];
 
-        // Setup the preview view.
-        self.cameraView.session = self.captureSession;
-
         [self.captureSession startRunning];
+
+        dispatch_async(dispatch_get_main_queue(), ^{
+            // Setup the preview view.
+            self.cameraView.session = self.captureSession;
+        });
     });
 }
 
@@ -189,26 +172,41 @@
     return nil;
 }
 
-#pragma mark - AVCaptureVideoDataOutputSampleBufferDelegate
-
-- (void)captureOutput:(AVCaptureOutput *)output didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection {
-//    [self.classifier classify:sampleBuffer];
-
-    [self.classifier classifyRequest:sampleBuffer callbackQueue:self.processingQueue handler:^(NSString *class) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            self.classLabel.text = class;
-            bool isHotdog = [class containsString:@"hot dog"] || [class containsString:@"hotdog"];
-            [self setClassLabelHotDog:isHotdog];
-        });
-    }];
-}
-
 #pragma mark - Instantiation from storyboard
 
 + (MBCameraViewController *)viewControllerFromStoryboard {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
     MBCameraViewController *cameraViewController = (MBCameraViewController *)[storyboard instantiateViewControllerWithIdentifier:@"MBCameraViewController"];
     return cameraViewController;
+}
+
+#pragma mark - AVCaptureVideoDataOutputSampleBufferDelegate
+
+- (void)captureOutput:(AVCaptureOutput *)output didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection {
+
+    [self.classifier classifyRequest:sampleBuffer callbackQueue:self.processingQueue handler:^(NSString *class) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self updateClassLabelForClassString:class];
+        });
+    }];
+}
+
+#pragma mark - Class label appearance
+
+- (void)updateClassLabelForClassString:(NSString *)classString {
+
+    bool isHotdog = [classString containsString:@"hot dog"] || [classString containsString:@"hotdog"];
+
+    NSUInteger location = [classString rangeOfString:@","].location;
+    NSString *class = location == NSNotFound ? classString : [classString substringToIndex:location];
+
+    UIColor *mbBlueColor = [UIColor colorWithRed:(CGFloat)0.228f green:0.698f blue:0.909f alpha:1.0f];
+
+    self.classLabel.backgroundColor = isHotdog ? mbBlueColor: [UIColor whiteColor];
+    self.classLabel.textColor = isHotdog ? [UIColor whiteColor] : mbBlueColor;
+    self.classLabel.text = isHotdog ? @"Hotdog!" : class;
+
+    self.classLabel.hidden = NO;
 }
 
 @end

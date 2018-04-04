@@ -12,10 +12,8 @@
 
 @interface MBClassifier : NSObject
 
-@property (nonatomic) UIImageOrientation orientation;
-
-- (void)classify:(CMSampleBufferRef)sampleBuffer;
-
 - (void)classifyRequest:(CMSampleBufferRef)sampleBuffer callbackQueue:(dispatch_queue_t)queue handler:(void(^)(NSString*))handler;
+
+- (void)updateWithDeviceOrientation:(UIDeviceOrientation)deviceOrientation;
 
 @end

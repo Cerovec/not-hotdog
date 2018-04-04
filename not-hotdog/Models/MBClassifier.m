@@ -22,6 +22,8 @@
 
 @property (nonatomic) VNCoreMLModel *vnModel;
 
+@property (nonatomic) UIImageOrientation orientation;
+
 @property (nonatomic) BOOL processing;
 
 @end
@@ -32,11 +34,31 @@
     self = [super init];
     if (self) {
         _inception = [[Inceptionv3 alloc] init];
-        _processing = NO;
         _vnModel = [VNCoreMLModel modelForMLModel:_inception.model error:nil];
         _orientation = UIImageOrientationRight;
+        _processing = NO;
     }
     return self;
+}
+
+- (void)updateWithDeviceOrientation:(UIDeviceOrientation)deviceOrientation {
+    switch (deviceOrientation) {
+        case UIDeviceOrientationPortrait:
+            self.orientation = UIImageOrientationRight;
+            break;
+        case UIDeviceOrientationPortraitUpsideDown:
+            self.orientation = UIImageOrientationLeft;
+            break;
+        case UIDeviceOrientationLandscapeLeft:
+            self.orientation = UIImageOrientationUp;
+            break;
+        case UIDeviceOrientationLandscapeRight:
+            self.orientation = UIImageOrientationDown;
+            break;
+        default:
+            self.orientation = UIImageOrientationUp;
+            break;
+    }
 }
 
 - (void)classify:(CMSampleBufferRef)sampleBuffer {

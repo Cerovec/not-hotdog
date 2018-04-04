@@ -17,7 +17,6 @@
 - (AVCaptureSession *)session {
     AVCaptureVideoPreviewLayer *previewLayer = (AVCaptureVideoPreviewLayer *)self.layer;
     return previewLayer.session;
-    return nil;
 }
 
 - (void)setSession:(AVCaptureSession *)session {
